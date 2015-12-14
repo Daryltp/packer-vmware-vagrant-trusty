@@ -1,0 +1,6 @@
+OVF/*
+ISO/*
+OVF/*
+.vagrant/
+output-vmware-iso/*
+packer_cache/
