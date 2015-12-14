@@ -2,7 +2,7 @@
 
 The purpose of this repo is use Packer to build both Vagrant and VMware images of a base ubuntu 14-04.3 setup.
 
-If you have the iso locally you can place it in the ISO folder to skip the download.
+If you have the iso locally you can place it in an "ISO" folder at the root of the repo to skip the download.
 
 ###Vagrant
 
