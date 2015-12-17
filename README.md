@@ -4,10 +4,14 @@ The purpose of this repo is use Packer to build both Vagrant and VMware images o
 
 If you have the iso locally you can place it in an "ISO" folder at the root of the repo to skip the download.
 
-###Vagrant
-
 ####Prereqs
-* Latest version (5.0.10) of VirtualBox installed
+* Vagrant installed  v1.7.4 or newer 
+* Packer installed v0.8.6 or newer
+* VirtualBox installed v5.0.10 or newer 
+* VMWare Fusion installed v8.1.0 or newer
+* VMWare ovftool installed and available in $PATH
+
+###Vagrant
 
 ####To Run
 The buildVagrant.sh script will clean up any artifacts from previous runs, zipping and versioning the .box file and start from scratch.
@@ -15,10 +19,6 @@ The buildVagrant.sh script will clean up any artifacts from previous runs, zippi
 A Vagrant user will be added to the image with sudo access. The Vagrant user uses the standard insecure keys for authentication, these can be found [here](https://github.com/mitchellh/vagrant/tree/master/keys). On first "Vagrant Up" this key will be replaced with a secure key.
 
 ###VMware
-
-####Prereqs
-* VMWare Fusion installed
-* VMWare ovftool installed
 
 ####To Run
 The buildVMware.sh script will clean up any artifacts from previous runs, zipping and versioning the .ovf and .vmdk files and start from scratch.

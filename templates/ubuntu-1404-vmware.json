@@ -1,4 +1,7 @@
     {
+  "variables": {
+    "vm_name": "{{env `packervmname`}}"
+  },
   "builders": [{
     "type": "vmware-iso",
     "guest_os_type": "Ubuntu-64",
@@ -38,7 +41,7 @@
     "ssh_port": 22,
     "ssh_wait_timeout": "10000s",
     "shutdown_command": "echo 'deploy' | sudo -S shutdown -P now",
-    "vm_name": "ubuntu-1404lts-golden"
+    "vm_name": "{{user `vm_name`}}"
   }],
     "provisioners": [{
     "type": "shell",
