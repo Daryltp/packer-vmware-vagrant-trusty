@@ -11,6 +11,7 @@ wget --no-check-certificate \
     -O ~vagrant/.ssh/authorized_keys
 chown -R vagrant ~vagrant/.ssh
 chmod -R go-rwsx ~vagrant/.ssh
+chsh -s /bin/bash vagrant
 
 mkdir /tmp/vbox
 mkdir /home/install
