@@ -3,5 +3,17 @@ echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDlrYBEVXx3E+YOSnpbo9MKD2uYUl8G09OUo0
 chown -R deploy ~deploy/.ssh
 chmod -R go-rwsx ~deploy/.ssh
 
-apt-get -y install open-vm-tools
+KEYPATH=/etc/vmware-pub-keys
 
+mkdir -p $KEYPATH
+wget -r --no-parent -A.pub http://packages.vmware.com/tools/keys/ -P $KEYPATH
+mv $KEYPATH/packages.vmware.com/tools/keys/*.pub $KEYPATH
+rm -rf $KEYPATH/packages.vmware.com/
+FILES=$KEYPATH/*
+for f in $FILES
+do
+	sudo apt-key add $f
+done
+echo 'deb http://packages.vmware.com/packages/ubuntu trusty main' > /etc/apt/sources.list.d/vmware-tools.list
+apt-get update
+apt-get install -y open-vm-tools open-vm-tools-deploypkg
