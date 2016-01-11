@@ -48,7 +48,7 @@
     "vmx_data_post":{
         "ethernet0.connectionType": "None"
     }
-  }],
+      }],
     "provisioners": [{
     "type": "shell",
     "execute_command": "echo 'deploy'|sudo -S sh '{{.Path}}'",
