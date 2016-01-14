@@ -39,6 +39,7 @@
     "ssh_wait_timeout": "10000s",
     "shutdown_command": "echo 'deploy' | sudo -S shutdown -P now",
     "vm_name": "ubuntu-1404lts-golden",
+    "disk_size": 30720,
     "format": "ovf"
   }],
     "provisioners": [{

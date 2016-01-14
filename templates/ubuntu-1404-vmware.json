@@ -42,6 +42,7 @@
     "ssh_wait_timeout": "10000s",
     "shutdown_command": "echo 'deploy' | sudo -S shutdown -P now",
     "vm_name": "{{user `vm_name`}}",
+    "disk_size": 30720,
     "vmx_data": {
         "ethernet0.virtualdev": "vmxnet3",
         "scsi0.virtualdev": "pvscsi"},

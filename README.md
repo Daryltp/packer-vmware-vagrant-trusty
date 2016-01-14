@@ -12,6 +12,7 @@ If you have the iso locally you can place it in an "ISO" folder at the root of t
 * VMWare ovftool installed and available in $PATH
 
 ###Vagrant
+This section will download the stated ubuntu-14 iso and create a vagrant .box file for local testing.
 
 ####To Run
 The buildVagrant.sh script will clean up any artifacts from previous runs, zipping and versioning the .box file and start from scratch.
@@ -19,6 +20,8 @@ The buildVagrant.sh script will clean up any artifacts from previous runs, zippi
 A Vagrant user will be added to the image with sudo access. The Vagrant user uses the standard insecure keys for authentication, these can be found [here](https://github.com/mitchellh/vagrant/tree/master/keys). On first "Vagrant Up" this key will be replaced with a secure key.
 
 ###VMware
+This section will download the stated ubuntu-14 iso and create an ovf file. It will then prompt you for your vCloud credentials and upload the OVF as a vApp template into the `Packer` catalog.
+*** PLEASE NOTE IF YOU WANT VCLOUD-TOOLS TO BUILD NEW VMS USING THIS NEW TEMPLATE YOU MUST UPDATE THE "VAPP-TEMPLATE-NAME" ACHOR IN THE VCLOUD-TOOLS-CONFIGURATION TO THE NAME OF THIS BUILD ***
 
 ####To Run
 The buildVMware.sh script will clean up any artifacts from previous runs, zipping and versioning the .ovf and .vmdk files and start from scratch.

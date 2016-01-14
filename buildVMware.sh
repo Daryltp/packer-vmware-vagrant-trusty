@@ -16,6 +16,9 @@ ovftool output-vmware-iso/$packervmname.vmx OVF/$packervmname.ovf
 #Upload to Carrenza - PLEASE NOTE - org and vdc details will need updated once on new official platform.
 echo "Uploading to Carrenza..."
 ovftool "OVF/$packervmname.ovf" "vcloud://:@vcloud.carrenza.com:443?org=zk51&vdc=VDC-SLOUGH-DEV-MGMT&catalog=Packer&vappTemplate=$packervmname"
+#Alert of updated template name
+echo "*** PLEASE NOTE IF YOU WANT VCLOUD-TOOLS TO BUILD NEW VMS USING THIS NEW TEMPLATE YOU MUST UPDATE THE 'VAPP-TEMPLATE-NAME' ACHOR IN THE VCLOUD-TOOLS-CONFIGURATION TO $packervmname ***"
+#Tidy Variables
 echo "Tidying up Environment Variables..."
 unset packervmname
 echo "Finished"
